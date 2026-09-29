@@ -9,7 +9,12 @@ import java.util.Set;
 // hashset -> original ones, compare with the full version of the array
 // array-> fill in the array, find the missing one
 class MissingNumber {
-    public int missingNumber1(int[] nums) {
+    public static void main(String[] args) {
+        int[] nums = {0,1,3};
+        MissingNumber m = new MissingNumber();
+        System.out.println(missingNumber1(nums));
+    }
+    public static int missingNumber1(int[] nums) {
         int missing = nums.length;
         for(int i = 0; i < nums.length; i++){
             missing ^= i;
