@@ -1,5 +1,6 @@
 # SQL Execution Order
 
+Get the data → filter rows → form groups → filter groups → choose the output → remove duplicates → sort → paginate.
 
 ```text
 1. FROM / JOIN
