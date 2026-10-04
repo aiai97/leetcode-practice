@@ -1,7 +1,6 @@
 package com.leslie.demo.array.slidingWindow;
 
-// failed because I didn't read the question carefully -> the product of all the elements in the subarray is strictly less than k.
-// I used to misunderstand it as the sum of all the elements in the subarray is equal to k.
+
 // no need to do it again
 public class SubarrayProductLessThanK {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
