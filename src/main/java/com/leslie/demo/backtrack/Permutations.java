@@ -15,7 +15,7 @@ class Solution {
     // failed： remember too many states
     private void backtrack(int[] nums,List<Integer> curr,List<List<Integer>> res){
         if(curr.size() == nums.length){
-            res.add(new ArrayList<>(curr)); // failed
+            res.add(new ArrayList<>(curr)); // failed, snapshot
             return;
         }
         for(int num: nums){
