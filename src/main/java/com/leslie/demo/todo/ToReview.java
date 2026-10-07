@@ -9,3 +9,5 @@ public class ToReview {
 //https://leetcode.com/problems/permutations/
 //https://leetcode.com/problems/subarray-sum-equals-k/
 //https://leetcode.com/problems/combinations/description/
+//https://leetcode.com/problems/sliding-window-maximum/
+//https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
