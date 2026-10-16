@@ -14,6 +14,32 @@ class MissingNumber {
         MissingNumber m = new MissingNumber();
         System.out.println(missingNumber1(nums));
     }
+
+    // I understood this solution
+    class Solution {
+        public int missingNumber(int[] nums) {
+            int missing = nums.length;
+            for(int i = 0; i < nums.length; i++){
+                missing ^= nums[i] ^ i;
+            }
+            return missing;
+        }
+    }
+
+    //latest
+        public int missingNumber(int[] nums) {
+            int n = nums.length;
+            Set set = new HashSet<Integer>();
+            for(int num:nums){
+                set.add(num);
+            }
+            for(int i = 0; i <= n;i++){
+                if(!set.contains(i)) return i;
+            }
+            return 0;
+        }
+
+
     public static int missingNumber1(int[] nums) {
         int missing = nums.length;
         for(int i = 0; i < nums.length; i++){
