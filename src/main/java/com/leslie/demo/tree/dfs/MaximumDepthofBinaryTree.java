@@ -36,17 +36,18 @@ class TreeNode{
         this.right = right;
     }
 }
+
+// easy -> no need to do it again
 class Solution {
     public int maxDepth(TreeNode root) {
-        if(root == null) return 0;
         return dfs(root,0);
     }
 
-    private int dfs(TreeNode node, int depth){
+    private int dfs(TreeNode node,int depth){
         if(node == null) return 0;
-        int leftTreeDepth = dfs(node.left,depth+1);
-        int rightTreeDepth = dfs(node.right,depth+1);
-        return Math.max(leftTreeDepth,rightTreeDepth) + 1;
+        int rightTreeMaxDepth = dfs(node.right,depth+1);
+        int leftTreeMaxDepth = dfs(node.left,depth+1);
+        return Math.max(rightTreeMaxDepth,leftTreeMaxDepth) + 1;
     }
 }
 
