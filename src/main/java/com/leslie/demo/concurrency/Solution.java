@@ -33,7 +33,7 @@ class Solution {
 
         Runnable worker = () -> {
             while (true) { // failed, need to process a lot of urls
-                // process todo tasks ->  yiled the cpu for the running tasks
+                // process todo tasks ->  yield the cpu for the running tasks
                 String url = queue.poll();
 
                 if (url == null) {
