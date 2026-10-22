@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class MinimumPathSum {
 }
 // I like my original solution
-// but I am practice recursion
+// but I am practicing recursion
 class Solution {
     public int minPathSum(int[][] grid) {
         int m = grid.length;
