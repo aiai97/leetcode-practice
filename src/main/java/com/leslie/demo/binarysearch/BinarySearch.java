@@ -2,8 +2,8 @@ package com.leslie.demo.binarysearch;
 
 public class BinarySearch {
 }
-//failed -> but no need to do it again, because you forget to specify the stop condition
 
+// passed
 class Solution {
     public int search(int[] nums, int target) {
         int n =  nums.length;

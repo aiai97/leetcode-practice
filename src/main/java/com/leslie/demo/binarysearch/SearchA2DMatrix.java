@@ -1,6 +1,6 @@
 package com.leslie.demo.binarysearch;
 
-// failed ->not need to do it again
+// easy
 public class SearchA2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix == null) return false;
@@ -11,7 +11,8 @@ public class SearchA2DMatrix {
         int right = row * column - 1;
         while(left <= right){
             int mid = left + (right - left) / 2;
-            int midpoint = matrix[mid / column][mid % column]; // failed because of typo
+            // 11 / 4 = 2, 11 % 4 = 3
+            int midpoint = matrix[mid / column][mid % column];
             if(midpoint == target){
                 return true;
             }else if(midpoint > target){
