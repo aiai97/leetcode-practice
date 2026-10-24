@@ -1,5 +1,6 @@
 package com.leslie.demo.linkedlist;
-// passed-> no need to do it again
+
+// easy
 public class MiddleoftheLinkedList {
 
     public ListNode middleNode(ListNode head) {

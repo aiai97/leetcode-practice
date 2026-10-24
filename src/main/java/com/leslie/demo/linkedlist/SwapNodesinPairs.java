@@ -3,6 +3,7 @@ package com.leslie.demo.linkedlist;
 //https://leetcode.com/problems/swap-nodes-in-pairs/
 public class SwapNodesinPairs {
 }
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -13,11 +14,8 @@ public class SwapNodesinPairs {
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-// failed -> because I forget about prevNode
-// 1 -> 2 -> 3-> 4->5
-// dummyNode -> get header
-// currNode-> node.next.next == nextLoopNode, node.next -> nextNode , nextNode.next-> nextLoopNode
-// currNode = nextLoopNode
+
+// failed, need to do it again
 class Solution2 {
     public ListNode swapPairs(ListNode head) {
         if(head == null || head.next == null) return head;
@@ -30,14 +28,14 @@ class Solution2 {
             ListNode nextNode = currNode.next;
             ListNode nextLoopNode = nextNode.next;
 
-            prevNode.next = nextNode;
             // 0-> 1-> 2-> 3->4
             // 2-> 1-> 3 -> 4
-            nextNode.next = currNode;
-            currNode.next = nextLoopNode;
+            prevNode.next = nextNode; // 0->2
+            nextNode.next = currNode; //  2->1
+            currNode.next = nextLoopNode; // 1-> 3
 
-            prevNode = currNode;
-            currNode = nextLoopNode;
+            prevNode = currNode; // 1
+            currNode = nextLoopNode; // 3
         }
         return dummyNode.next;
     }
