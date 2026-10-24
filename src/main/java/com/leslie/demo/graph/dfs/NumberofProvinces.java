@@ -50,23 +50,22 @@ public class NumberofProvinces {
 //        Return the result: After processing all connections, the remaining number of sets equals the number of connected components (provinces).
 
 
-// should do union find again, because it is the first time you understood it
+// failed, need to do it again
 class Solution {
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;
-        int[] parent =  new int[n];
-        int count = n;
-
-        for (int i = 0; i < n; i++) {
+        int[] parent = new int[n];
+        for(int i = 0; i < n; i++){ // failed, the boundary
             parent[i] = i;
         }
 
+        int count = n; // failed,
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (isConnected[i][j] == 1) {
-                    int rootA = find(i, parent);
-                    int rootB = find(j, parent);
-                    if( rootA != rootB){
+                    int rootA = findRoot(i, parent);
+                    int rootB = findRoot(j, parent);
+                    if (rootA != rootB) { //failed, only when they have different parent node
                         parent[rootA] = rootB;
                         count--;
                     }
@@ -76,10 +75,10 @@ class Solution {
         return count;
     }
 
-    private int find(int x, int[] parent) {
-        if (parent[x] != x) {
-            parent[x] = find(parent[x], parent);
+    private int findRoot(int node,int[] parent){
+        while(node != parent[node]){
+            node = parent[node]; // failed, no need for recursion
         }
-        return parent[x];
+        return node;
     }
 }

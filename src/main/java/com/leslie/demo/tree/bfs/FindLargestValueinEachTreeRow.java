@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-// failed-> not need to do it again because I ignored the constraints of the question  -231 <= Node.val <= 231 - 1
+// easy
 public class FindLargestValueinEachTreeRow {
     public List<Integer> largestValues(TreeNode root) {
         if(root == null) return new ArrayList<>();
@@ -15,7 +15,7 @@ public class FindLargestValueinEachTreeRow {
         List<Integer> res = new ArrayList();
         while(!q.isEmpty()){
             int levelSize = q.size();
-            int max = Integer.MIN_VALUE; // failed
+            int max = Integer.MIN_VALUE;
             for(int i = 0; i < levelSize;i++){
                 TreeNode node = q.poll();
                 max = Math.max(max,node.val);

@@ -78,22 +78,21 @@ class PathSumNewestVersion {
 //    }
 //}
 
-// easy-> no need to do it again
+// easy
 public class PathSum {
     public boolean hasPathSum(TreeNode root, int targetSum) {
-        return dfs(root,targetSum);
+        return dfs(root, targetSum);
     }
 
-    private boolean dfs(TreeNode node,int remainingTarget){
-        if(node == null) return false;
-        if(node.left == null && node.right == null){
-            if(remainingTarget == node.val) return true;
+    private boolean dfs(TreeNode node, int target) {
+        if (node == null) return false;
+        if (node.right == null && node.left == null) {
+            if (node.val == target) return true;
         }
-        remainingTarget -= node.val;
-        return dfs(node.left,remainingTarget) || dfs(node.right,remainingTarget);
+
+        return dfs(node.left, target - node.val) || dfs(node.right, target - node.val);
     }
 }
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

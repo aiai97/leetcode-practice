@@ -37,17 +37,15 @@ class TreeNode{
     }
 }
 
-// easy -> no need to do it again
+// easy
 class Solution {
     public int maxDepth(TreeNode root) {
-        return dfs(root,0);
+        return dfs(root);
     }
 
-    private int dfs(TreeNode node,int depth){
+    private int dfs(TreeNode node){
         if(node == null) return 0;
-        int rightTreeMaxDepth = dfs(node.right,depth+1);
-        int leftTreeMaxDepth = dfs(node.left,depth+1);
-        return Math.max(rightTreeMaxDepth,leftTreeMaxDepth) + 1;
+        return Math.max(dfs(node.right),dfs(node.left))+1;
     }
 }
 
