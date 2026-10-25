@@ -43,6 +43,7 @@ class Solution {
 
             distance++;
         }
+        // failed, find the right level and then do the right thing
         List<Integer> res = new ArrayList();
         while(!queue.isEmpty()){
             res.add(queue.poll().val);

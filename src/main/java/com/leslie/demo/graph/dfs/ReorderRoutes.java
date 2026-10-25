@@ -3,7 +3,7 @@ package com.leslie.demo.graph.dfs;
 import java.util.*;
 
 
-// failed -> will do it again
+// failed -> will do it next time
 public class ReorderRoutes {
 
     Set<String> roads = new HashSet<>();
@@ -12,7 +12,7 @@ public class ReorderRoutes {
 
     public int minReorder(int n, int[][] connections) {
         for (int i = 0; i < n; i++) {
-            graph.put(i, new ArrayList<>());
+            graph.put(i, new ArrayList<>()); // amazing
         }
 
         for (int[] connection: connections) {
@@ -23,14 +23,14 @@ public class ReorderRoutes {
         }
 
         seen.add(0);
-        return dfs(0);
+        return dfs(0); // amazing
     }
 
     public int dfs(int node) {
         int ans = 0;
         for (int neighbor: graph.get(node)) {
             if (!seen.contains(neighbor)) {
-                if (roads.contains(convertToHash(node, neighbor))) {
+                if (roads.contains(convertToHash(node, neighbor))) { // failed here
                     // hard here because I used to think I need to flip the direction but it turns out it's not needed
                     ans++;
                 }
