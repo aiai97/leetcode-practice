@@ -1,5 +1,7 @@
 package com.leslie.demo.concurrency.pratices;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 // failed
 public class ThreadSafeInventory {
     private int stock;
@@ -34,7 +36,47 @@ public class ThreadSafeInventory {
         }
     }
 }
+class ThreadSafeInventory2{
+    private final ReentrantLock lock = new ReentrantLock();
+    private int stock;
 
+    public ThreadSafeInventory2(int initialStock) {
+        stock = initialStock;
+    }
+
+    public boolean tryPurchase(int quantity, Runnable onPurchased) {
+        lock.lock();
+        try {
+            if (stock < quantity) {
+                return false;
+            }
+            stock -= quantity;
+        } finally {
+            lock.unlock();
+        }
+
+        onPurchased.run(); // failed, I used to put this line inside finally block
+        return true;
+    }
+
+    public void restock(int quantity) {
+        lock.lock();
+        try {
+            stock += quantity;
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public int available() {
+        lock.lock();
+        try {
+            return stock;
+        } finally {
+            lock.unlock();
+        }
+    }
+}
 /*
 For reference, the judge creates and runs threads against your class
 along these lines, with more threads that all start at the same time
