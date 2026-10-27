@@ -33,15 +33,10 @@ class LRUCache {
     }
 
     public int get(int key) {
+        if(!map.containsKey(key)) return -1;
         Node node = map.get(key);
-
-        if (node == null) {
-            return -1;
-        }
-
         remove(node);
         addToHead(node);
-
         return node.value;
     }
 

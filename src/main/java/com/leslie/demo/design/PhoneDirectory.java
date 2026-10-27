@@ -2,7 +2,7 @@ package com.leslie.demo.design;
 
 // easy
 class PhoneDirectory {
-    private boolean[] used;
+    private boolean[] used; // what phone nunmber, which status it is in
 
     public PhoneDirectory(int maxNumbers) {
         used = new boolean[maxNumbers];

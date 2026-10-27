@@ -2,6 +2,8 @@ package com.leslie.demo.design;
 
 import java.util.Stack;
 
+import java.util.Stack;
+// passed
 class MinStack {
     private Stack<Integer> stack;
     private Stack<Integer> minStack;
@@ -13,11 +15,10 @@ class MinStack {
 
     public void push(int val) {
         stack.push(val);
-        if (minStack.isEmpty() || val <= minStack.peek()) {
-            minStack.push(val);
-        } else {
-            // failed, need to watch it
+        if(!minStack.isEmpty() && minStack.peek() < val){
             minStack.push(minStack.peek());
+        }else{
+            minStack.push(val);
         }
     }
 
@@ -31,7 +32,6 @@ class MinStack {
     }
 
     public int getMin() {
-        // Top of minStack always holds current minimum
         return minStack.peek();
     }
 }
