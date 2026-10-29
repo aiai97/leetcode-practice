@@ -3,12 +3,12 @@ package com.leslie.demo.concurrency;
 import java.util.concurrent.atomic.AtomicInteger;
 
 // passed -> may need to optimize it in the future -> actually countdownlatch is better
-class Foo {
+class Foo2 {
 
     private AtomicInteger firstPermit;
     private AtomicInteger secondPermit;
 
-    public Foo() {
+    public Foo2() {
         firstPermit = new AtomicInteger(0);
         secondPermit = new AtomicInteger(0);;
     }
