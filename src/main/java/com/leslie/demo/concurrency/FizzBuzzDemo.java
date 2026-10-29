@@ -50,10 +50,12 @@ class FizzBuzzDemo  {
         while (true) {
             lock.lock();
             try {
+                // as long as the task should be done and the current number is not my turn, I will wait
                 while (current <= n && !isMyTurn.test(current)) {
                     turnChanged.await();
                 }
 
+                // tell the waiting threads to wake up to avoid deadlock
                 if (current > n) {
                     turnChanged.signalAll();
                     return;
