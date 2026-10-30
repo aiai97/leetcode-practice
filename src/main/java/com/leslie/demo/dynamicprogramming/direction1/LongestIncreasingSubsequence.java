@@ -28,34 +28,29 @@ class Solution1 {
         return result;
     }
 }
-// failed -> need to do it again
+// thank God. I wrote it down correctly.
 class LongestIncreasingSubsequenceDPSolution {
     Map<Integer, Integer> memo = new HashMap<>();
 
     public int lengthOfLIS(int[] nums) {
-        int result = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-            result = Math.max(result, dp(i, nums));
+        int ans = 0;
+        for(int i = 0; i < nums.length; i++){
+            ans = Math.max(ans,dp(i,nums));
         }
-
-        return result;
+        return ans;
     }
 
-    // I like this one more
     private int dp(int index, int[] nums) {
-        if (memo.containsKey(index)) {
+
+        if(memo.containsKey(index)){
             return memo.get(index);
         }
-
         int ans = 1;
-
-        for (int j = 0; j < index; j++) {
-            if (nums[j] < nums[index]) {
-                ans = Math.max(dp(j, nums) + 1, ans);
+        for(int i = 0; i < index; i++){
+            if(nums[index] > nums[i]){
+                ans = Math.max(dp(i,nums)+ 1,ans);
             }
         }
-
         memo.put(index, ans);
         return ans;
     }

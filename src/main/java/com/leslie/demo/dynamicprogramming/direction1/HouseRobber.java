@@ -19,23 +19,22 @@ public class HouseRobber {
 }
 
 
-//failed -> need to do it again
+//passed
 class HouseRobberDPSolution {
-    HashMap<Integer, Integer> memo;
-
+    HashMap<Integer,Integer> memo;
     public int rob(int[] nums) {
         memo = new HashMap<>();
-        return dp(nums.length - 1, nums); // failed -> index is not right
+        return dp(nums.length-1,nums);
     }
 
-    private int dp(int i, int[] nums) {
-        if (i == 0) return nums[i]; // failed -> index is not right
-        if (i == 1) return Math.max(nums[0], nums[1]); // failed -> index is not right
-        if (memo.containsKey(i)) {
+    private int dp(int i, int[] nums){
+        if(i == 0) return nums[i];
+        if(i == 1) return Math.max(nums[0],nums[1]);
+        if(memo.containsKey(i)){
             return memo.get(i);
         }
-        int ans = Math.max(dp(i - 2, nums) + nums[i], dp(i - 1, nums));
-        memo.put(i, ans);
+        int ans = Math.max(dp(i-1,nums),dp(i-2,nums)+nums[i]);
+        memo.put(i,ans);
         return ans;
     }
 }

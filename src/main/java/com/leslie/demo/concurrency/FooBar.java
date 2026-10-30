@@ -61,7 +61,7 @@ class FooBar2 {
 
     public void foo(Runnable printFoo) throws InterruptedException {
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { //    notice the loop here
             semaphore1.acquire();
             // printFoo.run() outputs "foo". Do not change or remove this line.
             printFoo.run();

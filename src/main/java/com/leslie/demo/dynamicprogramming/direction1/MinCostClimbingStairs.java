@@ -15,7 +15,7 @@ public class MinCostClimbingStairs {
         return res[n];
     }
 }
-
+// easy -> passed
 class Solution {
     HashMap<Integer,Integer> memo;
     public int minCostClimbingStairs(int[] cost) {
@@ -23,14 +23,15 @@ class Solution {
         return dfs(cost.length, cost);
     }
 
-    // failed, the first namings was "n" + cost , which deluded me
     private int dfs(int i,int[] cost){
-        if(i < 2) return 0;
+        if(i <= 1) return 0;
+
         if(memo.containsKey(i)){
             return memo.get(i);
         }
-        int minCost = Math.min(dfs(i-1,cost)+cost[i-1],dfs(i-2,cost)+cost[i-2]);
+        int minCost = Math.min(dfs(i-1,cost) + cost[i-1], dfs(i-2,cost) + cost[i-2]);
         memo.put(i,minCost);
+
         return minCost;
     }
 }
