@@ -15,7 +15,7 @@ public class SwapNodesinPairs {
  * }
  */
 
-// failed, need to do it again
+// Passed, but I need to do it again
 class Solution2 {
     public ListNode swapPairs(ListNode head) {
         if(head == null || head.next == null) return head;
@@ -26,16 +26,16 @@ class Solution2 {
         ListNode currNode = head;
         while(currNode != null && currNode.next != null){
             ListNode nextNode = currNode.next;
-            ListNode nextLoopNode = nextNode.next;
+            ListNode nextLoopNode = currNode.next.next;
 
             // 0-> 1-> 2-> 3->4
             // 2-> 1-> 3 -> 4
-            prevNode.next = nextNode; // 0->2
-            nextNode.next = currNode; //  2->1
-            currNode.next = nextLoopNode; // 1-> 3
+            prevNode.next = nextNode;
+            nextNode.next = currNode;
+            currNode.next = nextLoopNode;
 
-            prevNode = currNode; // 1
-            currNode = nextLoopNode; // 3
+            prevNode = currNode;
+            currNode = nextLoopNode;
         }
         return dummyNode.next;
     }
