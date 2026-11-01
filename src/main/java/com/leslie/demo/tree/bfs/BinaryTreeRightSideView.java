@@ -47,7 +47,7 @@ class Solution {
         queue.add(root);
         while (!queue.isEmpty()) {
             int currentLength = queue.size();
-            int prev = 0;
+            int prev = 0; // this is a new way of imeplementation too , but I like my previous implementation
 
             for (int i = 0; i < currentLength; i++) {
                 TreeNode node = queue.remove();

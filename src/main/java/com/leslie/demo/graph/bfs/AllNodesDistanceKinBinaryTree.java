@@ -18,32 +18,32 @@ class TreeNode {
 }
 public class AllNodesDistanceKinBinaryTree {
 }
-// failed-> cannot think of it in the beginning,will do it again
+// failed-> I almost got it but failed
 class Solution {
-    Map<TreeNode, TreeNode> parents = new HashMap<>();
 
+    HashMap<TreeNode,TreeNode> map = new HashMap<>();
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
-        dfs(root, null);
+        dfs(root,null);
         Queue<TreeNode> queue = new LinkedList<>();
         Set<TreeNode> seen = new HashSet();
         queue.add(target);
         seen.add(target);
 
-        int distance = 0;
-        while (!queue.isEmpty() && distance < k) { //failed because I used "distance < k - 1 and then exit the while loop
+        int distanceK = 0;
+        while (!queue.isEmpty() && distanceK < k) {
             int currentLength = queue.size();
             for (int i = 0; i < currentLength; i++) {
                 TreeNode node = queue.poll();
-                for(TreeNode neighbor:Arrays.asList(node.left,node.right,parents.get(node))){ // failed I used List.of() and it cannot allow null elements
-                    if (neighbor != null && seen.add(neighbor)) { // faild  because I didn;t check dead end
+                TreeNode parent = map.get(node);
+                for(TreeNode neighbor:Arrays.asList(parent,node.left,node.right)){
+                    if(neighbor != null && !seen.contains(neighbor)){
                         queue.add(neighbor);
+                        seen.add(neighbor);
                     }
                 }
             }
-
-            distance++;
+            distanceK += 1; //failed, after each layer
         }
-        // failed, find the right level and then do the right thing
         List<Integer> res = new ArrayList();
         while(!queue.isEmpty()){
             res.add(queue.poll().val);
@@ -52,10 +52,10 @@ class Solution {
         return res;
     }
 
-    public void dfs(TreeNode node, TreeNode parent) {
+    public void dfs(TreeNode node,TreeNode parent){
         if(node == null) return;
-        parents.put(node,parent);
+        map.put(node,parent);
+        dfs(node.right,node); // here, typo
         dfs(node.left,node);
-        dfs(node.right,node);
     }
 }

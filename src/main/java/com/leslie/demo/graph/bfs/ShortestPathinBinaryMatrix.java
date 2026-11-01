@@ -26,18 +26,18 @@ class ShortestPathinBinaryMatrix{
 
         boolean[][] seen = new boolean[n][n];
         seen[0][0] = true;
-        Queue<State> queue = new LinkedList<>();
-        queue.add(new State(0, 0, 1));
+        Queue<com.leslie.demo.graph.bfs.matrix.hard.State> queue = new LinkedList<>();
+        queue.add(new com.leslie.demo.graph.bfs.matrix.hard.State(0, 0, 1));
 
         while(!queue.isEmpty()){
-            State state = queue.poll();
+            com.leslie.demo.graph.bfs.matrix.hard.State state = queue.poll();
             if(state.row == n - 1 && state.col == n - 1) return state.steps;
             for(int[] direction : directions){
                 int nextRow = state.row + direction[0];
                 int nextCol = state.col + direction[1];
                 if(isValid(nextRow, nextCol, grid) && !seen[nextRow][nextCol]) {
                     seen[nextRow][nextCol] = true;
-                    queue.add(new State(nextRow, nextCol, state.steps + 1));
+                    queue.add(new com.leslie.demo.graph.bfs.matrix.hard.State(nextRow, nextCol, state.steps + 1));
                 }
             }
         }
