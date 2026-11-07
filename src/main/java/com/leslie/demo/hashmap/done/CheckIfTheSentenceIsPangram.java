@@ -1,4 +1,4 @@
-package com.leslie.demo.array.hashset;
+package com.leslie.demo.hashmap.done;
 
 //passed -> no need to do it again
 public class CheckIfTheSentenceIsPangram {
@@ -15,7 +15,7 @@ public class CheckIfTheSentenceIsPangram {
     }
 }
 
-// better solution
+// I don't like the second solution
 class Solution {
     public boolean checkIfPangram(String sentence) {
         for(char ch='a';ch<='z';ch++){

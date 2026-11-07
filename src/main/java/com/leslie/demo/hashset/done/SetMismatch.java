@@ -1,4 +1,4 @@
-package com.leslie.demo.array.hashset;
+package com.leslie.demo.hashset.done;
 
 import java.util.HashSet;
 import java.util.Set;

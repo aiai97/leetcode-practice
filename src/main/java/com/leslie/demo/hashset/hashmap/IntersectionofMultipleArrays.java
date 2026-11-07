@@ -1,8 +1,8 @@
-package com.leslie.demo.hashset;
+package com.leslie.demo.hashset.hashmap;
 
 import java.util.*;
 
-// no need to do it again because you will use ide -> for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
+// easy -> no need to do it again
 public class IntersectionofMultipleArrays {
     public List<Integer> intersection(int[][] nums) {
         Map<Integer,Integer> counts = new HashMap<>();
@@ -14,12 +14,12 @@ public class IntersectionofMultipleArrays {
 
         List<Integer> res = new ArrayList<>();
         int numLen = nums.length;
-        for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
+        for (Map.Entry<Integer,Integer> entry : counts.entrySet()) {
             if(entry.getValue() == numLen){
                 res.add(entry.getKey());
             }
         }
-            Collections.sort(res);
+        Collections.sort(res);
         return res;
     }
 }

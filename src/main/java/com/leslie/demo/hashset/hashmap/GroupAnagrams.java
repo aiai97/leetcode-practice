@@ -1,4 +1,4 @@
-package com.leslie.demo.array.hashset.hashmap;
+package com.leslie.demo.hashset.hashmap;
 
 import java.util.*;
 

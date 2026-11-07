@@ -1,7 +1,8 @@
-package com.leslie.demo.array.hashset;
+package com.leslie.demo.hashset.done;
 
 import java.util.Arrays;
 
+// I prefer set
 public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums);
