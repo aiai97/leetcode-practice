@@ -1,4 +1,4 @@
-package com.leslie.demo.array.twopinter;
+package com.leslie.demo.array.done.twopointer;
 
 public class SquaresofaSortedArray {
 }

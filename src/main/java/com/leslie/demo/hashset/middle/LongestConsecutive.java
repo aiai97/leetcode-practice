@@ -1,4 +1,4 @@
-package com.leslie.demo.array.globalres;
+package com.leslie.demo.hashset.middle;
 
 import java.util.HashSet;
 import java.util.Set;

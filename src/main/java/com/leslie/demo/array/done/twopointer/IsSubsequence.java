@@ -1,4 +1,4 @@
-package com.leslie.demo.array.twopinter;
+package com.leslie.demo.array.done.twopointer;
 
 //passed
 public class IsSubsequence {
@@ -11,7 +11,6 @@ public class IsSubsequence {
             }
             j++;
         }
-
         return i == s.length();
     }
 }

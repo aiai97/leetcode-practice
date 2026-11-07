@@ -1,4 +1,4 @@
-package com.leslie.demo.array.prefixsum;
+package com.leslie.demo.array.done.prefixsum;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.leslie.demo.array.globalres;
+package com.leslie.demo.array.done.globalres;
 
 // passed-> beat 45%
 //done -> no need to do it again

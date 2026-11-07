@@ -1,4 +1,4 @@
-package com.leslie.demo.array.prefixsum;
+package com.leslie.demo.array.done.prefixsum;
 
 //failed -> forgot to use long to store the sum, need to do it again
 public class NumberofWaystoSplitArray {

@@ -1,4 +1,4 @@
-package com.leslie.demo.array.twopinter;
+package com.leslie.demo.array.done.twopointer;
 
 //failed in interview -> because I didn't use ide to give me prompts,
 // I wrote it all manually, cannot remember the syntax of s[left];

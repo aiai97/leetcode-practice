@@ -1,4 +1,4 @@
-package com.leslie.demo.array.slidingWindow;
+package com.leslie.demo.array.done.slidingWindow;
 
 
 // no need to do it again
